@@ -1,1 +1,3 @@
-/server/models/models.js
+/server/api.js
+/server/package-lock.json
+/server/node_modules
