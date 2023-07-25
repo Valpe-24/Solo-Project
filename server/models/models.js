@@ -5,24 +5,21 @@ const Schema = mongoose.Schema;
 
 const restaurantSchema = new Schema({
 
-    address: {
+    address : {
         building: String,
-        coord: [Number, Number],
-        street: String,
-        zipcode: String,
+        coord: [], 
+        street: String, 
+        zipcode: String, 
     },
-    borough: String, 
-    cuisine: String, 
-    grades: [
-        {
-            date: Date,
-            grade: String, 
-            score: Number
-        }
-    ],
 
-    name: String,
-    restaurant_id: String, 
+    borough: String, 
+    cuisine: String,
+    grades: [{date: Date, grade: String, score: Number},
+        {date: Date, grade: String, score: Number},
+        {date: Date, grade: String, score: Number},
+        {date: Date, grade: String, score: Number}],
+    name: String, 
+    restaurant_id: String
 })
 
 const Restaurant = mongoose.model('restaurant', restaurantSchema)

@@ -14,7 +14,7 @@ ChartJS.register(
   BarElement, Title, Tooltip,Legend
 );
 
-export const options = {
+const options = {
   responsive: true,
   plugins: {
     legend:{
@@ -22,22 +22,11 @@ export const options = {
     },
     title:{
       display: true,
-      text: "Best Chicken ever"
+      text: "Chicken by grade"
     },
   },
 };
 
-
-
-// export const data = {
-//   labels,
-//   datasets: [
-//     {
-//     label: ' ',
-//     data: '',
-//     backgroundColor: ''
-//   }]
-// }
 
 export const Chickens = () => {
   const[chickenScore, setChickenScore] = useState([])
@@ -58,9 +47,9 @@ export const Chickens = () => {
     labels,
     datasets: [
       {
-      label: 'Burgers, Pizza, Chicken',
+      label: 'Chicken',
       data: chickenScore.map((d) => {
-        return d.score}),
+        return d.grades[2].score}),
       backgroundColor: 'rgb(133,80,122)'
     }]
   }
@@ -68,18 +57,13 @@ export const Chickens = () => {
   
   return (
     <div>
-      <Bar options = {options} data = {data} />
-      {/* {chickenScore.map((rest) => {
-        if (rest.cuisine === 'Chicken'){
-        return(
-          <div>
-            <h2>Name: {rest.name}</h2>
-            <h2>Grade: {rest.grade}</h2>
-            <h2>Score: {rest.score}</h2>
-          </div>
-        )
-        }
-      })} */}
+      <div style = {{width:'80%', height: '50%'}}>
+        <Bar options = {options} data = {data} />
+      </div>
+
+      <div style = {{width:'80%', height: '50%'}}>
+        <Bar options = {options} data = {data} />
+      </div>
     </div>
   )
 }
